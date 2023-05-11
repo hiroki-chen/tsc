@@ -64,7 +64,6 @@
 //! [tinola_blog]: http://blog.tinola.com/?e=54
 //! [so_cpu_cycles]: https://stackoverflow.com/a/51907627/1422197
 //! [so_time_stamp]: https://stackoverflow.com/a/42490374/1422197
-#![feature(asm, stdsimd)]
 #![no_std]
 
 #[cfg(not(any(target_arch = "x86", target_arch = "x86_64")))]
