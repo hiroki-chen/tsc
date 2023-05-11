@@ -72,8 +72,6 @@ compile_error!(
     "The TSC crate only supports the \"x86\" and \"x86_64\" architectures"
 );
 
-extern crate test;
-
 use core::ops;
 
 #[cfg(target_arch = "x86")]
