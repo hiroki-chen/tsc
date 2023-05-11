@@ -83,15 +83,7 @@ use core::arch::x86_64 as arch;
 /// Without an invariant TSC, the timings reported by this library might be
 /// unreliable.
 pub fn has_invariant_tsc() -> bool {
-    use self::arch::{has_cpuid, CpuidResult, __cpuid};
-
-    // The invariant TSC is advertised in the CPUID.80000007H:EDX[8] bit.
-
-    // CPU doesn't have a CPUID instruction => too old to have an invariant
-    // TSC.
-    if !has_cpuid() {
-        return false;
-    }
+    use self::arch::{CpuidResult, __cpuid};
 
     // Obtain the largest basic CPUID leaf supported by the CPUID
     let CpuidResult { eax: max_basic_leaf, .. } = unsafe { __cpuid(0_u32) };
